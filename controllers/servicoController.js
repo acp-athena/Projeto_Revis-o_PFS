@@ -61,24 +61,24 @@ class ServicoController {
     //     });
     //   }
 
-      async editarServicos(req, res) {
-        const { servicos, veiculo } = req.body;
-        const id = req.params.id;
-        let servicosModel = new ServicoModel(id, servicos);
-        let isUpdated = await servicosModel.updateRelacionamentoPorId(veiculo);
+      // async editarServicos(req, res) {
+      //   const { servicos, veiculo } = req.body;
+      //   const id = req.params.id;
+      //   let servicosModel = new ServicoModel(id, servicos);
+      //   let isUpdated = await servicosModel.updateRelacionamentoPorId(veiculo);
     
-        if (isUpdated) {
-          res.send({
-            ok: true,
-            message: "Serviço alterado com sucesso!",
-          });
-          return;
-        }
-        res.send({
-          ok: false,
-          message: "Não foi possível alterar serviço",
-        });
-      }
+      //   if (isUpdated) {
+      //     res.send({
+      //       ok: true,
+      //       message: "Serviço alterado com sucesso!",
+      //     });
+      //     return;
+      //   }
+      //   res.send({
+      //     ok: false,
+      //     message: "Não foi possível alterar serviço",
+      //   });
+      // }
 
       async alocarServico(req, res) {
         const { servico, veiculo } = req.body;
@@ -96,7 +96,7 @@ class ServicoController {
           }
           res.send({
             ok: false,
-            message: "Não foi possível alocar patrimonio ao veiculo!",
+            message: "Não foi possível alocar serviço ao veiculo!",
           });
           return;
         }
