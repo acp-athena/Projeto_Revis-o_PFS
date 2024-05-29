@@ -1,0 +1,32 @@
+
+<h1>Catálogo de serviços</h1>
+<div>
+    <div style="margin-top:20px;">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabela">
+                    <% lista.forEach(function(value, index) { %>
+                            <tr>
+                                <td><%= value.serv_id %></td>
+                                <td><%= value.serv_desc %></td>
+                                <td>R$<%= value.serv_valor %></td>
+                            </tr>   
+                        <% }) %>        
+                </tbody>
+            </table>
+            <div>
+                <a class="btn btn-primary" href="/servicos/alocar">
+                    Alocar serviço
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>

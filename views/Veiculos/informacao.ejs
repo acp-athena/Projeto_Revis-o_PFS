@@ -1,0 +1,47 @@
+<section>
+  <div style="margin-bottom: 15px;">
+    <div>
+      <button id="btnExportarExcel" class="btn btn-primary">Exportar para Excel</button>
+      <button onclick="window.print()" id="btnExportarPDF" class="btn btn-primary">Exportar para PDF</button>
+  </div>
+  <div id="divFiltros" style="margin-bottom: 15px;">
+  <div class="input-group">
+      <input id="filtro" placeholder="Digite um valor a ser filtrado" class="form-control" aria-label="Text input with dropdown button">
+      <div class="input-group-append">
+        <button id="btnEscolherFiltro" class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filtros</button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item itemFiltro" data-nome="Servicos" data-valor="2">Serviços</a>
+          <a class="dropdown-item itemFiltro" data-nome="Veiculos" data-valor="1">Veiculos</a>
+        </div>
+        <button class="btn btn-outline-secondary" id="btnFiltrar"  type="button"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+      <h2>Informações:</h2>
+      <div class="row justify-center">
+        <div class="col col-12">
+          <div class="table-responsive">
+            <table id="tabelaServicos" class="table table-hover">
+              <thead>
+                <tr>
+                    <th scope="col" class="text-start">Serviços</th>
+                    <th scope="col" class="text-start">Veiculos</th>
+                </tr>
+              </thead>
+              <tbody id="corpoTabela">
+                <% for (let i = 0; i < lista.length; i++)  { %>
+                    <tr>
+                        <td><%= lista[i].serv_id %></td>
+                        <td><%= lista[i].vei_id %></td>
+                        <td>
+                <% } %>        
+            </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="/js/Veiculos/filtro.js"></script>
+  

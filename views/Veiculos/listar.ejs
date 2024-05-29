@@ -1,0 +1,34 @@
+
+<h1>Veículos cadastrados</h1>
+
+<div>
+
+    <div style="margin-top:20px;">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Modelo</th>
+                        <th>Marca</th>
+                        <th>Ano</th>
+                        <th>Kilometragem</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabela">
+                    <% lista.forEach(function(value, index) { %>
+                            <tr>
+                                <td><%= value.veiId %></td>
+                                <td><%= value.veiModelo %></td>
+                                <td><%= value.veiMarca %></td>
+                                <td><%= value.veiAno %></td>
+                                <td><%= value.veiKilometragem %></td>
+                                
+                            </tr>   
+                        <% }) %>        
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
