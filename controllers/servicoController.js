@@ -14,6 +14,7 @@ class ServicoController {
         res.render('servicos/listar', { lista: lista  });
     }
 
+    //FILTRO FEITO PARA LISTAR OS SERVIÇOS JÁ FEITOS
     async filtrar(req, res){
       let termo = req.params.termo;
       let filtro = req.params.filtro;
@@ -31,6 +32,7 @@ class ServicoController {
       res.render('veiculos/informacao', { lista: lista  });
   }
 
+  //ALOCAÇÃO DE SERVIÇO
     async alocarView(req, res){
         var serv = new ServicoModel();
         var lista = await serv.listar();
@@ -41,23 +43,23 @@ class ServicoController {
         res.render('Servicos/alocar', { lista: lista, listaVeiculo: listaVeiculo });
     }
 
-    async getTodosServicos(req, res) {
-        let servicosModel = new ServicoModel();
-        let servicos = await servicosModel.getTodosServicosEVeiculos();
+    // async getTodosServicos(req, res) {
+    //     let servicosModel = new ServicoModel();
+    //     let servicos = await servicosModel.getTodosServicosEVeiculos();
     
-        if (servicos && servicos.length) {
-          res.send({
-            ok: true,
-            data: servicos,
-          });
-          return;
-        }
+    //     if (servicos && servicos.length) {
+    //       res.send({
+    //         ok: true,
+    //         data: servicos,
+    //       });
+    //       return;
+    //     }
     
-        res.send({
-          ok: false,
-          data: null,
-        });
-      }
+    //     res.send({
+    //       ok: false,
+    //       data: null,
+    //     });
+    //   }
 
       async editarServicos(req, res) {
         const { servicos, veiculo } = req.body;

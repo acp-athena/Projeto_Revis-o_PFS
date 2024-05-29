@@ -51,24 +51,24 @@ class ServicoModel {
         return listaRetorno;
     }
 
-    async getTodosServicosEVeiculos() {
-        const query = `
-          select PEP.serv_id, PEP.serv_descricao, E.vei_id 
-          from (select P.serv_id, P.serv_descricao, EP.vei_id from tb_servicos as P 
-            left join tb_servicosprestados as EP on P.serv_id = EP.serv_id) as PEP 
-          left join tb_veiculos as E on PEP.vei_id = E.vei_id;
-        `;
-        let rows = await conexao.ExecutaComando(query);
+    // async getTodosServicosEVeiculos() {
+    //     const query = `
+    //       select PEP.serv_id, PEP.serv_descricao, E.vei_id 
+    //       from (select P.serv_id, P.serv_descricao, EP.vei_id from tb_servicos as P 
+    //         left join tb_servicosprestados as EP on P.serv_id = EP.serv_id) as PEP 
+    //       left join tb_veiculos as E on PEP.vei_id = E.vei_id;
+    //     `;
+    //     let rows = await conexao.ExecutaComando(query);
     
-        return rows.map(
-          (row) =>
-            new ServicoModel(
-              row.serv_id,
-              row.serv_descricao,
-              row.vei_id
-            )
-        );
-    }
+    //     return rows.map(
+    //       (row) =>
+    //         new ServicoModel(
+    //           row.serv_id,
+    //           row.serv_descricao,
+    //           row.vei_id
+    //         )
+    //     );
+    // }
 
     async updateRelacionamentoPorId(vei_id) {
         if (vei_id) {
