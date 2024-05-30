@@ -70,21 +70,21 @@ class ServicoModel {
     //     );
     // }
 
-    async updateRelacionamentoPorId(vei_id) {
-        if (vei_id) {
-          //Atualiza alocação
-          //Atualiza relacionamento entre o patrimonio e evento
-          const queryAtualizarRelacionamento =
-            "update tb_servicosprestados set vei_id = ? where serv_id = ?";
-          const valuesAtualizarRelacionamento = [vei_id, this.#serv_id];
-          const isUpdatedRelacionamento = await conexao.ExecutaComandoNonQuery(
-            queryAtualizarRelacionamento,
-            valuesAtualizarRelacionamento
-          );
+    // async updateRelacionamentoPorId(vei_id) {
+    //     if (vei_id) {
+    //       //Atualiza alocação
+    //       //Atualiza relacionamento entre o patrimonio e evento
+    //       const queryAtualizarRelacionamento =
+    //         "update tb_servicosprestados set vei_id = ? where serv_id = ?";
+    //       const valuesAtualizarRelacionamento = [vei_id, this.#serv_id];
+    //       const isUpdatedRelacionamento = await conexao.ExecutaComandoNonQuery(
+    //         queryAtualizarRelacionamento,
+    //         valuesAtualizarRelacionamento
+    //       );
     
-          return isUpdatedRelacionamento;
-        }
-      }
+    //       return isUpdatedRelacionamento;
+    //     }
+    // }
     
       async alocarServico(serv_id, vei_id) {
     
